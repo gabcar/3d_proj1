@@ -1,10 +1,7 @@
 import numpy as np
-from scipy.stats import multivariate_normal
 from matplotlib import pyplot as plt
 from T2 import dwt2, idwt2
 import pywt
-from cv2 import imread, resize
-from mpl_toolkits.mplot3d import Axes3D
 
 def plot3D(img1, title=''):
     fig = plt.figure(figsize=plt.figaspect(1))
