@@ -36,7 +36,7 @@ def generateWavelets(lp_d, hp_d, _res=100, levels=2, fine=0, padding=0):
     z = np.zeros((_res + padding, _res + padding))
     if fine == 0:
         p = int(_res / 4)
-        z[:p, :p] = wv[:p, :p]
+        z[:p, p:2 * p] = np.abs(wv[:p, p:2 * p])
     else:
         p = int(_res / 2)
         z[p:, p:] = wv[p:, p:]
@@ -237,8 +237,8 @@ def fig_5c():
 
 if __name__ == '__main__':
     #fig_4_a()
-    #fig_4_b()
-    fig_5a()
-    fig_5b()
-    fig_5c()
+    fig_4_b()
+    #fig_5a()
+    #fig_5b()
+    #fig_5c()
     #plt.show()
